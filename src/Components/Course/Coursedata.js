@@ -17,6 +17,9 @@ const Coursedata = () => {
             { id: 10, src: '../../images/img10.jpg', name: 'Electronic Device', price: 13000 },
 
       ]
+      const handleAddToCart = (course) => {
+            console.log(course);
+      }
       return (
             <div className='shop-container'>
                   <div className='course-container'>
@@ -26,6 +29,7 @@ const Coursedata = () => {
                               courses.map(course => <Course
                                     key={course.id}
                                     course={course}
+                                    handleAddToCart={handleAddToCart}
                               ></Course>)
                         }
                   </div>
