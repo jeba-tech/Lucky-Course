@@ -75,3 +75,8 @@
             grid-template-columns: repeat(1, 1fr);
       }
 }
+
+.question {
+      margin: 40px;
+      font-size: 20px;
+}
