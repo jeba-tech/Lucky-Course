@@ -1,6 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 import Course from '../Course/Course';
 import '../Header/Courses.css'
+import Cart from '../Cart/Cart';
+
 import images from '../../images/img1.jpg'
 
 const Coursedata = () => {
@@ -17,8 +20,13 @@ const Coursedata = () => {
             { id: 10, src: '../../images/img10.jpg', name: 'Electronic Device', price: 13000 },
 
       ]
+
+      const [cart, setCart] = useState([]);
+
       const handleAddToCart = (course) => {
             console.log(course);
+            const newCart = [...cart, course];
+            setCart(newCart);
       }
       return (
             <div className='shop-container'>
@@ -34,7 +42,7 @@ const Coursedata = () => {
                         }
                   </div>
                   <div className='cart-container'>
-                        <h1>Cart Summary</h1>
+                        <Cart cart={cart}></Cart>
                   </div>
 
 

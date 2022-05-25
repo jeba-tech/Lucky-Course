@@ -40,6 +40,9 @@
       border: none;
       border-radius: 0px 0px 8px 8px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
 }
 
@@ -52,4 +55,23 @@
       padding: 20px;
 }
 
+.cart {
+      margin-right: 7px;
+}
+
+.cart-container {
+      background-color: rgb(165, 207, 207);
+      padding: 20px;
+}
+
+.cart-btn {
+      padding: 20px;
+      margin: 10px;
+}
+
 /*Responsive for mobile*/
+@media screen and (max-width:740px) {
+      .course-container {
+            grid-template-columns: repeat(1, 1fr);
+      }
+}
