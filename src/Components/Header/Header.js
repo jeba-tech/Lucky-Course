@@ -6,8 +6,7 @@ const header = () => {
 
       return (
             <nav className='header'>
-                  <h1>Coursearaa</h1>
-                  <h3>Choose your course</h3>
+                  <h1 className='fw-bold'>Cou<span style={{ color: "green" }}>rsey</span></h1>
             </nav>
 
 

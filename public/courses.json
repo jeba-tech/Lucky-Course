@@ -1,0 +1,62 @@
+[
+      {
+            "id": 1,
+            "name": "Animation",
+            "img": "https://i.ibb.co/Ln2jbh7/img1.jpg",
+            "price": "9000"
+      },
+      {
+            "id": 2,
+            "name": "Research Methodology",
+            "img": "https://i.ibb.co/42QjQy6/img2.png",
+            "price": "10000"
+      },
+      {
+            "id": 3,
+            "name": "Computer Organization & Architecture",
+            "img": "https://i.ibb.co/wshfdyQ/img3.jpg",
+            "price": "7000"
+      },
+      {
+            "id": 4,
+            "name": "Theory of computation",
+            "img": "https://i.ibb.co/BVzjR4f/img4.png",
+            "price": "9000"
+      },
+      {
+            "id": 5,
+            "name": "Statistics",
+            "img": "https://i.ibb.co/QH8jf5r/img5.jpg",
+            "price": "12000"
+      },
+      {
+            "id": 6,
+            "name": "Operating System",
+            "img": "https://i.ibb.co/QmDjnSB/img6.jpg",
+            "price": "14000"
+      },
+      {
+            "id": 7,
+            "name": "Computer Networks",
+            "img": "https://i.ibb.co/ThgS5Pc/img7.jpg",
+            "price": "5000"
+      },
+      {
+            "id": 8,
+            "name": "Engineering Ethics",
+            "img": "https://i.ibb.co/MVLDwx9/img8.png",
+            "price": "8000"
+      },
+      {
+            "id": 9,
+            "name": "Digital logic and Circuits",
+            "img": "https://i.ibb.co/D4ZDg7k/img9.jpg",
+            "price": "11000"
+      },
+      {
+            "id": 10,
+            "name": "Electronic Device",
+            "img": "https://i.ibb.co/3mHHNYX/img10.jpg",
+            "price": "13000"
+      }
+]
