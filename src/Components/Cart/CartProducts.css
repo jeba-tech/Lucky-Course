@@ -1,11 +1,13 @@
 .cartImg {
-      width: 70px;
-      border-radius: 18px;
+      width: 80px;
+      border-radius: 5px;
+      height: 70px;
+      margin: 15px;
 }
 
 .cartProducts {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+
       margin-bottom: 15px;
 }

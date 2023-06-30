@@ -3,8 +3,8 @@ import "./RandomSelectProduct.css"
 
 const RandomSelectProduct = ({ lucky }) => {
       return (
-            <div className='randomProduct'>
-                  <img className='randomProductimg' src={lucky.img} alt="" />
+            <div className='cartProducts container'>
+                  <img className='cartImg' src={lucky.img} alt="" />
                   <h5>{lucky.name}</h5>
             </div>
       );

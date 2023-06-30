@@ -3,60 +3,71 @@ import { useState } from 'react';
 import Course from '../Course/Course';
 import '../Header/Courses.css'
 import CartProducts from '../Cart/CartProducts';
+import Swal from 'sweetalert2'
 import RandomSelectProduct from './RandomSelectProduct';
 
 
 const Coursedata = () => {
       const [courses, setCourses] = useState([])
-
+      const [cart, setCart] = useState([]);
+      const [lucky, setLucky] = useState([])
       useEffect(() => {
             fetch('courses.json')
                   .then(res => res.json())
                   .then(data => setCourses(data))
       }, [])
 
-      const [cart, setCart] = useState([]);
+
 
       const Reset = () => {
             setCart([])
+            // setLucky([])
       }
+
+
+
+
       const handleAddToCart = (course) => {
+            console.log("Selected Course:", course);
+            const double = cart.find(doubleCount => doubleCount.id === course.id)
+            if (double) {
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'You can not select same Item',
+                  });
 
-            // if (cart.find(product => product.id === course.id)) {
-            //       return
-            // }
-            // const double = cart.find(doubleCount => doubleCount.id === course.id)
-            console.log(course)
-            if (cart.length > 3) {
-                  alert("You can select only 4 Items")
             }
-            // else if (double) {
-            //       alert("You can't select same Item")
-            // }
             else {
-
-                  const newCart = [...cart, course]
-                  setCart(newCart)
+                  const newCart = [...cart, course];
+                  console.log("Updated Cart:", newCart);
+                  setCart(newCart);
             }
 
+      };
 
-
-      }
-      const [lucky, setLucky] = useState([])
 
       const RandomSelect = () => {
-            console.log(cart);
+
             if (cart.length === 0) {
-                  alert("Your Select Items Empty")
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Please add to cart first',
+                  });
+            } else {
+                  const randomIndex = Math.floor(Math.random() * cart.length);
+                  const luckyItem = cart[randomIndex];
+                  setLucky(luckyItem);
             }
-            else {
-                  let step1 = (cart.length - 1) - (0) + 1
-                  let step2 = Math.random() * step1;
-                  let result = Math.floor(step2) + 0;
-                  let luckyItem = cart[result]
-                  setLucky(luckyItem)
-            }
-      }
+
+      };
+
+      console.log("Cartlucky", lucky)
+      console.log("Cartvhvhh", cart)
+      console.log("Cartcourses", courses)
+
+
       return (
             <div className='shop-container'>
                   <div className='course-container'>
@@ -71,20 +82,21 @@ const Coursedata = () => {
                         }
                   </div>
                   <div className='cart-container'>
-                        <h1 className='ms-5 mt-5'>Cart Summary</h1>
-                        <h1 className='text-center my- fs-2 m-3'>Selected Items:{cart.length}</h1>
-                        <h5 className='text-center mb-4 fs-4'>Select Maximum 4 Items</h5>
-
-
-                        {
-
-                              cart.map(productCart => <CartProducts
-                                    productCart={productCart} key={productCart.id}
-                              ></CartProducts>)
-                        }
+                        <h1 className=' ms-5 mt-5 fs-4'>Cart Summary</h1>
+                        <h1 className='ms-5  fs-5 p-1'>Selected Items:{cart.length}</h1>
+                        {cart.length > 0 ? (
+                              <>
+                                    <h5 className='ms-5 mb-4 fs-5 p-1'>Thank you and happy learning!!</h5>
+                                    {cart.map(productCart => (
+                                          <CartProducts productCart={productCart} key={productCart.id} />
+                                    ))}
+                              </>
+                        ) : (
+                              <h5 className='ms-5 mb-4 fs-5 p-1'>No courses selected</h5>
+                        )}
                         <div className="multiBtn">
-                              <button className='btn btn-success mb-4 p-2 fs-5 ms-5' onClick={RandomSelect}>Choose one For me</button><br></br>
-                              <button className='btn btn-secondary p-2 fs-5 ms-5' onClick={Reset}>Reset Products</button>
+                              <button className='btn btn-success mb-4 p-2  ms-4' onClick={RandomSelect}>Choose one For me</button><br></br>
+                              <button className='btn btn-secondary p-2 ms-4' onClick={Reset}>Reset Products</button>
                         </div>
                         <div className="div my-4">
                               <RandomSelectProduct lucky={lucky}></RandomSelectProduct>

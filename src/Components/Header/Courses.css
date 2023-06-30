@@ -18,14 +18,14 @@
 }
 
 .course-container {
-      margin: 30px;
+
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 45px;
+      grid-gap: 10px;
       border: 1px;
       border-style: solid;
       border-color: rgb(184, 169, 169);
-      padding: 20px;
+      padding: 10px;
 }
 
 .btn-cart {
@@ -47,7 +47,7 @@
 }
 
 .course {
-      background-color: rgb(211, 211, 211);
+      background-color: rgb(207, 206, 206);
       padding: 20px;
 }
 
@@ -57,7 +57,7 @@
 
 .cart-container {
       background-color: rgb(165, 207, 207);
-      padding: 20px;
+
 }
 
 .cart-btn {
